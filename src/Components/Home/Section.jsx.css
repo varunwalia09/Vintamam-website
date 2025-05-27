@@ -1,0 +1,17 @@
+/* Optional: If you want to put CSS externally */
+
+.parallax-container {
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+  height: 00vh;
+  position: relative;
+}
+
+.parallax-layer {
+  flex: 1 0 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}

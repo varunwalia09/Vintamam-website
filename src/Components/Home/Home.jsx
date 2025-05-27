@@ -1,11 +1,19 @@
-import React from 'react'
+import React from 'react';
+import Section from './Section.jsx';
+import Description from './Description.jsx';
+import Intro from './Intro.jsx' ;
 
 const Home = () => {
   return (
-    <div>
-      <h1>this is the home page</h1>
-    </div>
-  )
-}
+    <section>
+      <div className="video-container">
+ 
+      </div>
+      <Section/>
+      <Intro/>
+      <Description/>
+    </section>
+  );
+};
 
-export default Home
+export default Home;

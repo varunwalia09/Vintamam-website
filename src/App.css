@@ -1,6 +1,103 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- 
 }
+
+/* Body Styles */
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* NavBar Styles */
+.top-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  position: relative;
+  /* background-color: #fff; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-1 {
+  position: absolute;
+  left: 0;
+  padding-left: 30px;
+ font-size: 30px;
+  font-weight: bold;
+  color: orangered;
+}
+
+.navbar-1 {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navbar-1 li {
+  display: inline-block;
+}
+
+.navbar-1 a {
+  text-decoration: none;
+  color: orangered;
+  font-size: 30px;
+  transition: color 0.2s ease;
+}
+
+.navbar-1 a:hover {
+color: #666;
+}
+
+.btn-sub {
+  background-color: transparent;
+  border: none;
+ font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: orangered;
+  transition: color 0.2s ease;
+}
+
+.btn-sub:hover {
+  color: #666;
+}
+
+.address3 {
+  position: absolute;
+  right: 30px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+
+.address3:hover {
+  color: #666;
+}
+
+/* videos section */
+.video-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+/* video section end  */
+/* hero start */
+.main-head{
+  color: black;
+}
+/* hero end */
