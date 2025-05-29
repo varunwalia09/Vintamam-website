@@ -1,0 +1,22 @@
+.description-container {
+  display: flex;
+  justify-content: center;
+  margin: 10rem auto;
+  max-width: 93.75vw;
+  padding: 2rem;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.description-text {
+  font-size: 6.82vw;
+  text-transform: uppercase;
+  max-width: 50vw;
+  line-height: 1;
+  text-align: center;
+}
+.description-container{
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+}

@@ -2,19 +2,19 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+import './Section.css'; // CSS for video background
 
-const bgImage = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Section() {
   const container = useRef(null);
-  const imageRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
-    if (!container.current || !imageRef.current) return;
+    if (!container.current || !videoRef.current) return;
 
-    const anim = gsap.to(imageRef.current, {
-      yPercent: 20, // moves 20% down
+    const anim = gsap.to(videoRef.current, {
+      yPercent: 20,
       ease: "none",
       scrollTrigger: {
         trigger: container.current,
@@ -48,18 +48,23 @@ export default function Section() {
       }}
     >
       <div style={{ position: "relative", zIndex: 10, maxWidth: "50vw", textAlign: "right", mixBlendMode: "difference" }}>
-        <p style={{ fontSize: "2vw", textTransform: "uppercase"  }}>
+        <p style={{ fontSize: "2vw", textTransform: "uppercase" }}>
           Crafting innovative solutions that blend creativity and technology, delivering excellence with precision and passion.
         </p>
-        <p style={{ fontSize: "5vw",  lineHeight: "1", margin:"0", textTransform: "uppercase" }}>Creative Innovation</p>
+        <p style={{ fontSize: "5vw", lineHeight: "1", margin: "0", textTransform: "uppercase" }}>
+          Creative Innovation
+        </p>
       </div>
 
-      <div style={{ position: "fixed", top: "-10vh", left: 0, width: "100%", height: "120vh", zIndex: 0, overflow: "hidden" }}>
-        <img
-          ref={imageRef}
-          src={bgImage}
-          alt="background"
-          style={{ width: "100%", height: "100%", objectFit: "cover", willChange: "transform" }}
+      <div className="video-background">
+        <video
+          ref={videoRef}
+          src="/src/assets/2nd.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="video-element"
         />
       </div>
     </div>

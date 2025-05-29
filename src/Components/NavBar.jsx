@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import AttachEmailIcon from '@mui/icons-material/AttachEmail';
+import AttachEmailIcon from '@mui/icons-material/AttachEmail'
+import LogoImage from '../assets/logo-light.svg';
+
+
 
 const NavBar = () => {
   return (
-    <nav className='top-1'>
+    <nav className="top-1">
       <a href="/" className="logo-1">
-        <p>VintaVerse</p>
+        <img src={LogoImage} alt="VintaVerse Logo" className="logo-image" />
       </a>
       <ul className="navbar-1">
         <li>
@@ -29,7 +32,7 @@ const NavBar = () => {
             rel="noreferrer"
           >
             <button className="btn-sub">
-              <AttachEmailIcon /> Email:contact@vintaverse.com
+              <AttachEmailIcon />:contact@vintaverse.com
             </button>
           </a>
         </li>
@@ -38,4 +41,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar;
+export default NavBar

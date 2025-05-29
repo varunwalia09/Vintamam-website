@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "./Intro.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const bgImage = "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=80";
+const bgImage = "https://cdn.pixabay.com/photo/2024/06/22/18/09/ai-generated-8846759_1280.jpg";
 
 export default function Intro() {
   const container = useRef(null);
@@ -14,7 +15,7 @@ export default function Intro() {
     if (!container.current || !imageRef.current) return;
 
     const anim = gsap.to(imageRef.current, {
-      yPercent: 20, // Smooth parallax like Section
+      yPercent: 20,
       ease: "none",
       scrollTrigger: {
         trigger: container.current,
@@ -31,36 +32,14 @@ export default function Intro() {
   }, []);
 
   return (
-    <div
-      ref={container}
-      style={{
-        position: "relative",
-        height: "100vh",
-        overflow: "hidden",
-        clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "white",
-        padding: "2rem",
-        flexDirection: "column",
-        gap: "2rem",
-      }}
-    >
-      <div style={{ position: "relative", zIndex: 10, maxWidth: "50vw", textAlign: "right", mixBlendMode: "difference" }}>
-        <p style={{ fontSize: "2vw", textTransform: "uppercase" }}>
-          We turn concepts into experiences that inspire, engage, and innovate.
-        </p>
-        <p style={{ fontSize: "5vw", textTransform: "uppercase" }}>Visionary Design</p>
+    <div ref={container} className="intro-container">
+      <div className="intro-text">
+        <p>We turn concepts into experiences that inspire, engage, and innovate.</p>
+        <p>Visionary Design</p>
       </div>
 
-      <div style={{ position: "fixed", top: "-10vh", left: 0, width: "100%", height: "120vh", zIndex: 0, overflow: "hidden" }}>
-        <img
-          ref={imageRef}
-          src={bgImage}
-          alt="intro background"
-          style={{ width: "100%", height: "100%", objectFit: "cover", willChange: "transform" }}
-        />
+      <div className="intro-bg-wrapper">
+        <img ref={imageRef} src={bgImage} alt="intro background" className="intro-bg-image" />
       </div>
     </div>
   );

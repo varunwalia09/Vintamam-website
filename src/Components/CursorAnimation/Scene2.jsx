@@ -8,7 +8,7 @@ export default function Scene2() {
     const [activeWordIndex, setActiveWordIndex] = useState(null);
 
     return (
-        <div className="h-screen flex items-center justify-center bg-white relative overflow-hidden">
+        <div className="scene2-wrapper h-screen flex items-center justify-center bg-white relative overflow-hidden">
   <h1 className="text-[4.5vw] max-w-[90vw] text-center text-black p-20 leading-snug">
   {words.map((word, i) => (
     <span
@@ -22,11 +22,9 @@ export default function Scene2() {
     >
       {word}
     </span>
-  ))}
-</h1>
-
-
-            <GradientCursor isActive={activeWordIndex !== null} />
+    ))}
+    </h1>
+    <GradientCursor isActive={activeWordIndex !== null} />
         </div>
     );
 }
