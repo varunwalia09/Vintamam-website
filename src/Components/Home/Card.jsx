@@ -17,8 +17,8 @@ const Card = ({ frontText, description, skills }) => {
 
     ScrollTrigger.create({
       trigger: cardContainer,
-      start: "top 30%",
-      end: "top 30%",
+      start: "top 50%",
+      end: "top 35%",
       scrub: true,
       onUpdate: (self) => {
         const rotation = gsap.utils.mapRange(0, 1, 0, 180, self.progress);
@@ -52,7 +52,7 @@ const Card = ({ frontText, description, skills }) => {
         </div>
         <div className="card-back">
           <img
-            src="https://wallpaperaccess.com/full/2843501.jpg"
+            src="src\assets\vinta.png"
             alt="King"
           />
         </div>

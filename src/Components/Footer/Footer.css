@@ -1,0 +1,225 @@
+/* Footer fixed at bottom */
+.footer-fixed {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 450px;
+  background-color: #ffffff;
+  display: flex;
+  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  padding: 1.5rem 3rem;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  margin-top: 10px;
+  border-top-left-radius: 50%;
+
+}
+
+/* Left side with curve */
+.footer-left {
+  flex: 1;
+  position: relative;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Curve shape on left side */
+.footer-left::before {
+  content: '';
+  position: absolute;
+     top: 110px;
+    left: -48px;
+    width: 79px;
+    height: 81%;
+  background: orangered;
+  border-top-right-radius: 120px;
+  border-bottom-right-radius: 120px;
+  z-index: 0;
+}
+
+.footer-left > * {
+  position: relative; /* so content appears above the curve */
+  z-index: 1;
+}
+
+.footer-logo {
+  width: 300px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 9rem;
+  margin-left: 25%;
+  
+}
+
+/* Add the rest of your existing footer CSS below */
+
+.footer-para {
+  max-width: 140px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: #000000;
+}
+
+/* Right side */
+.footer-right {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 2rem;
+}
+
+/* Sections container */
+.footer-sections {
+  display: flex;
+  gap: 5rem;
+  margin-left: 12%;
+    font-size: 30px
+}
+
+/* Each section */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+  color: #000000;
+}
+
+.footer-section li:hover {
+  color: rgb(0, 0, 0);
+}
+
+/* Newsletter */
+.footer-newsletter {
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 22%;
+}
+
+.newsletter-form {
+  margin-top: 0.5rem;
+  display: flex;
+}
+
+.newsletter-form input[type="email"] {
+  /* flex: 1; */
+  padding: 0.4rem 0.6rem;
+  /* border: none; */
+  /* border-radius: 4px 0 0 4px; */
+  font-size: 2rem;
+   text-decoration: underline;
+}
+
+.newsletter-form button {
+  padding: 0.4rem 1rem;
+  border-radius: 10%;
+  background-color: #000000;
+  color:orangered;
+  cursor: pointer;
+  /* border-radius: 0 4px 4px 0; */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+ 
+}
+
+.newsletter-form button:hover {
+  background-color: orangered;
+  color: black;
+}
+
+/* Social icons */
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.social-icons a svg {
+  font-size: 40px;
+}
+
+.social-icons a {
+  color: #000000;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: orangered;
+}
+
+/* Headings */
+.footer-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  position: relative;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+  cursor: default;
+}
+
+/* Animated line under heading */
+.animated-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 40px;
+  background-color: #ff6f61;
+  animation: slideRight 2s linear infinite;
+  border-radius: 2px;
+}
+.vintaverse {
+  left: 240%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  z-index: 1000; 
+   bottom: -50px; 
+  transform: translateX(-80%);
+}
+
+.vintaverse h1 {
+  font-size: 2rem;
+  margin-left: 0;
+  font-weight: 900;
+  line-height: 1;
+  color: orangered;  /* ya jo color chahiye */
+}
+
+.vintaverse p {
+    gap: 10px;
+  margin: 0.3rem 0 0 0;
+  font-size: 0.9rem;
+  color: orangered;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+

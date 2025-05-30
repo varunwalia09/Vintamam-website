@@ -4,7 +4,6 @@ import Description from "./Description.jsx";
 import Intro from "./Intro.jsx";
 import Marquee from "./Marquee.jsx";
 import Card from "./Card.jsx";
-
 const Home = () => {
   return (
     <section>
@@ -22,11 +21,11 @@ const Home = () => {
           paddingTop: "100px",
           display: "flex",
           justifyContent: "center",
-          gap: "15px",
+          gap: "5px",
           // flexWrap: "wrap",
           background: "#ddd",
           margin:" 10rem auto",
-          maxWidth:"90.75vw",
+          maxWidth:"93.75vw",
           borderRadius:"20px",
         }}
       >
@@ -58,6 +57,7 @@ const Home = () => {
         />
        
       </div>
+      
     </section>
   );
 };
