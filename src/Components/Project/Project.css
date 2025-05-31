@@ -1,58 +1,69 @@
-/* .gallery {
-  height: 175vh;
-  background: rgb(45, 45, 45);
+.project-container {
   position: relative;
-  display: flex;
-  gap: 2vw;
-  padding: 2vw;
-  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
   overflow: hidden;
 }
 
-.column {
-  position: relative;
+/* Canvas full screen */
+.paint-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  width: 25%;
-  min-width: 250px;
+  cursor: crosshair;
+  z-index: 1;
+}
+
+/* Content overlay is on top of canvas */
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* So that mouse events go to canvas */
   display: flex;
   flex-direction: column;
-  gap: 2vw;
+  align-items: center;
+  justify-content: center;
 }
 
-.column .imageContainer {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  border-radius: 1vw;
-  overflow: hidden;
+/* Headings container */
+.heading-container {
+  text-align: center;
+  color: #222;
+font-family: "Poppins", sans-serif;
+  margin-bottom: 40px;
 }
 
-.column .imageContainer img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.heading-container h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 700;
 }
 
-.column:nth-of-type(1) {
-  top: -45%;
-  position: relative;
+.heading-container h2 {
+  font-size: 2rem;
+  margin: 5px 0;
+  font-weight: 600;
+  color: #555;
 }
 
-.column:nth-of-type(2) {
-  top: -95%;
-  position: relative;
+.heading-container h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 400;
+  color: #888;
 }
 
-.column:nth-of-type(3) {
-  top: -45%;
-  position: relative;
+/* Centered big text */
+.centered-text {
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  user-select: none;
 }
-
-.column:nth-of-type(4) {
-  top: -75%;
-  position: relative;
-}
-
-.spacer {
-  height: 100vh;
-} */

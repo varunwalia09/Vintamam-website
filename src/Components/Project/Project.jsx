@@ -1,3 +1,106 @@
+import React, { useRef, useEffect, useState } from 'react';
+import './Project.css';
+import ProjectDetails from './ProjectDetails';
+const eraserColors = [
+  '#3498db', // Blue
+  '#f1c40f', // Yellow
+  '#e67e22', // Orange
+  '#2c3e50', // Dark Blue
+  '#145214'  // Dark Green
+];
+
+
+const Project = () => {
+  const canvasRef = useRef(null);
+  const [colorIndex, setColorIndex] = useState(0);
+  const [hasFilled, setHasFilled] = useState(false);
+  const [readyToChange, setReadyToChange] = useState(false);
+
+  const setupCanvas = () => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  };
+
+  useEffect(() => {
+    setupCanvas();
+
+    const handleResize = () => {
+      setupCanvas();
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [colorIndex]);
+
+  const handleMouseMove = (e) => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = eraserColors[colorIndex];
+    ctx.beginPath();
+    ctx.arc(x, y, 200, 0, Math.PI * 2);
+    ctx.fill();
+
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let paintedPixels = 0;
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      const r = imageData.data[i];
+      const g = imageData.data[i + 1];
+      const b = imageData.data[i + 2];
+      if (!(r === 255 && g === 255 && b === 255)) {
+        paintedPixels++;
+      }
+    }
+
+    const ratio = paintedPixels / (canvas.width * canvas.height);
+
+    if (ratio > 0.9 && !hasFilled) {
+      setHasFilled(true);
+      setReadyToChange(true);
+    }
+
+    if (hasFilled && readyToChange) {
+      setColorIndex((prev) => (prev + 1) % eraserColors.length);
+      setupCanvas();
+      setHasFilled(false);
+      setReadyToChange(false);
+    }
+  };
+
+  return (
+    <div className="project-container">
+      <canvas
+        ref={canvasRef}
+        onMouseMove={handleMouseMove}
+        className="paint-canvas"
+      />
+      <div className="content-overlay">
+        <div className="heading-container">
+          <h1>Our Projects</h1>
+          <h2>Crafting Excellence</h2>
+          <h3>with Every Line of Code</h3>
+        </div>
+        <div className="centered-text">I’m VintaVerse</div>
+      </div>
+      {/* <ProjectDetails/> */}
+    </div>
+  );
+};
+
+export default Project;
+
+
 
 
 // import React, { useEffect, useRef, useState } from "react";

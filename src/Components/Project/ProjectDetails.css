@@ -1,0 +1,61 @@
+.double {
+  display: flex;
+  margin-top: 10vh;
+  height: 45vw;
+  transition: width 0.3s ease;
+}
+
+.imageContainer {
+  transition: width 0.3s ease;
+}
+
+.double .imageContainer:nth-of-type(1) {
+  width: 66.66%;
+}
+.double .imageContainer:nth-of-type(2) {
+  width: 33.33%;
+}
+
+.double.reversed .imageContainer:nth-of-type(1) {
+  width: 33.33%;
+}
+.double.reversed .imageContainer:nth-of-type(2) {
+  width: 66.66%;
+}
+
+.stretchyWrapper {
+  padding-bottom: 66%;
+  position: relative;
+  overflow: hidden;
+}
+
+.stretchyWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.body {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.body h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  margin-top: 0px;
+  font-weight: 400;
+}
+
+.body p {
+  font-size: 1em;
+  margin: 0px;
+  color: rgb(187, 187, 187);
+}
+
+.body p:nth-of-type(2) {
+  color: rgb(101, 101, 101);
+}

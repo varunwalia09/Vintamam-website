@@ -1,39 +1,48 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
   return (
     <footer className="footer-fixed">
-    <div className="footer-left">
-  <img 
-    src="src\assets\logo-light.svg" 
-    alt="Logo" 
-    className="footer-logo" 
-  />
-  {/* <p className="footer-para">
-    This is a sample paragraph under the logo describing something about the company or footer.
-  </p> */}
-  <div className="vintaverse">
-    <h1>VintaVerse</h1>
-    <p>©copyright</p>
-  </div>
-</div>
-
+      <div className="footer-left">
+        <img 
+          src="src\assets\logo-light.svg" 
+          alt="Logo" 
+          className="footer-logo" 
+        />
+        <div className="vintaverse">
+          <h1>VintaVerse</h1>
+          <p>©copyright</p>
+        </div>
+      </div>
 
       <div className="footer-right">
         <div className="footer-sections">
           <Section 
             title="Navbar" 
-            items={['Home', 'About', 'Contact']} 
+            items={[
+              { label: 'Project', path: '/project' },
+              { label: 'Team', path: '/team' },
+              { label: 'Contact', path: '/contact' }
+            ]}
           />
           <Section 
             title="Services" 
-            items={['Design', 'Development', 'Marketing']} 
+            items={[
+              { label: 'Design' },
+              { label: 'Development' },
+              { label: 'Marketing' }
+            ]}
           />
           <Section 
             title="Resources" 
-            items={['Blog', 'Docs', 'FAQs']} 
+            items={[
+              { label: 'Blog' },
+              { label: 'Docs' },
+              { label: 'FAQs' }
+            ]}
           />
         </div>
 
@@ -47,10 +56,10 @@ const Footer = () => {
             <button type="submit">Subscribe</button>
           </form>
           <div className="social-icons">
-            <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-            <a href="#" aria-label="Instagram"><FaInstagram /></a>
-            <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
-            <a href="#" aria-label="GitHub"><FaGithub /></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF /></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
           </div>
         </div>
       </div>
@@ -66,7 +75,13 @@ const Section = ({ title, items }) => (
     </h3>
     <ul>
       {items.map((item) => (
-        <li key={item}>{item}</li>
+        <li key={item.label}>
+          {item.path ? (
+            <Link to={item.path}>{item.label}</Link>
+          ) : (
+            item.label
+          )}
+        </li>
       ))}
     </ul>
   </div>
