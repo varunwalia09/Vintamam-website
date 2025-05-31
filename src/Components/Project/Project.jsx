@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './Project.css';
-import ProjectDetails from './ProjectDetails';
 const eraserColors = [
   '#3498db', // Blue
   '#f1c40f', // Yellow
@@ -93,7 +92,6 @@ const Project = () => {
         </div>
         <div className="centered-text">I’m VintaVerse</div>
       </div>
-      {/* <ProjectDetails/> */}
     </div>
   );
 };
